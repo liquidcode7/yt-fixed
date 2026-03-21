@@ -1,0 +1,8 @@
+# Firefox web-ext build artifacts
+web-ext-artifacts/
+*.zip
+*.xpi
+
+# OS junk
+.DS_Store
+Thumbs.db
