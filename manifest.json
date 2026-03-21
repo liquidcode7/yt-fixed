@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "YouTube Fixed",
+  "version": "1.0",
+  "description": "No Shorts, no algorithm noise, subscriptions as home.",
+  "permissions": [
+    "webNavigation",
+    "tabs",
+    "https://www.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": ["redirect.js"],
+    "persistent": false
+  }
+}
