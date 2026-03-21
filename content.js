@@ -5,6 +5,8 @@ const SELECTORS_TO_REMOVE = [
   "ytd-search-pyv-renderer",
   ".ytp-ce-element",
   ".ytp-endscreen-content",
+  "ytm-shorts-lockup-view-model-v2",
+  "grid-shelf-view-model",
 ];
 
 function removeJunk() {
