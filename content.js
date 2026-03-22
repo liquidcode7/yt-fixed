@@ -1,4 +1,5 @@
-const SELECTORS_TO_REMOVE = [
+// Hardcoded fallback — used when cache is empty or storage is unavailable
+const FALLBACK_JS_SELECTORS = [
   "ytd-reel-shelf-renderer",
   "ytd-reel-item-renderer",
   "ytd-compact-autoplay-renderer",
@@ -9,22 +10,47 @@ const SELECTORS_TO_REMOVE = [
   "grid-shelf-view-model",
 ];
 
+let activeSelectors = FALLBACK_JS_SELECTORS;
+
 function removeJunk() {
-  for (const selector of SELECTORS_TO_REMOVE) {
-    document.querySelectorAll(selector).forEach(el => el.remove());
+  for (const selector of activeSelectors) {
+    document.querySelectorAll(selector).forEach((el) => el.remove());
   }
 
   // Remove Shorts from sidebar by href
-  document.querySelectorAll("ytd-guide-entry-renderer a").forEach(a => {
+  document.querySelectorAll("ytd-guide-entry-renderer a").forEach((a) => {
     if (a.href.includes("/shorts")) {
       a.closest("ytd-guide-entry-renderer")?.remove();
     }
   });
 }
 
-// Run once immediately when page loads
+function injectCSS(cssSelectors) {
+  const style = document.createElement("style");
+  style.textContent =
+    cssSelectors.join(",\n") + " { display: none !important; }";
+  (document.head || document.documentElement).appendChild(style);
+}
+
+// Run immediately with hardcoded fallback selectors
 removeJunk();
 
-// Then keep watching for new elements being injected
+// Observe from documentElement — body may not exist yet at document_start
 const observer = new MutationObserver(removeJunk);
-observer.observe(document.body, { childList: true, subtree: true });
+observer.observe(document.documentElement, { childList: true, subtree: true });
+
+// Async: load cached selectors and apply them
+// Falls back silently to the hardcoded list if storage is unavailable
+browser.storage.local.get("selectorCache").then(({ selectorCache }) => {
+  if (!selectorCache) return;
+
+  if (selectorCache.js) {
+    activeSelectors = selectorCache.js;
+    removeJunk(); // Re-run with updated list
+  }
+
+  if (selectorCache.css) {
+    // Injects supplemental CSS on top of the hardcoded style.css
+    injectCSS(selectorCache.css);
+  }
+});

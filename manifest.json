@@ -6,7 +6,10 @@
   "permissions": [
     "webNavigation",
     "tabs",
-    "https://www.youtube.com/*"
+    "storage",
+    "alarms",
+    "https://www.youtube.com/*",
+    "https://raw.githubusercontent.com/*"
   ],
   "content_scripts": [
     {
@@ -17,7 +20,7 @@
     }
   ],
   "background": {
-    "scripts": ["redirect.js"],
+    "scripts": ["redirect.js", "selector-fetcher.js"],
     "persistent": false
   },
   "icons": {

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "js": [
+    "ytd-reel-shelf-renderer",
+    "ytd-reel-item-renderer",
+    "ytd-compact-autoplay-renderer",
+    "ytd-search-pyv-renderer",
+    ".ytp-ce-element",
+    ".ytp-endscreen-content",
+    "ytm-shorts-lockup-view-model-v2",
+    "grid-shelf-view-model"
+  ],
+  "css": [
+    "ytd-reel-shelf-renderer",
+    "ytd-guide-entry-renderer a[href=\"/shorts\"]",
+    "tp-yt-paper-tab:has(> .tab-content[aria-label=\"Shorts\"])",
+    "ytd-reel-item-renderer",
+    "yt-chip-cloud-chip-renderer:has([title=\"Shorts\"])",
+    "ytd-autoplay-config-renderer",
+    ".ytp-ce-element",
+    ".ytp-endscreen-content",
+    "ytd-compact-autoplay-renderer",
+    "ytd-search-pyv-renderer",
+    "ytd-rich-shelf-renderer"
+  ]
+}
