@@ -6,3 +6,6 @@ web-ext-artifacts/
 # OS junk
 .DS_Store
 Thumbs.db
+
+# Nested clone (accident)
+yt-fixed/

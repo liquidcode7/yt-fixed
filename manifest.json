@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "YouTube Fixed",
   "version": "1.0",
-  "description": "No Shorts, no algorithm noise, subscriptions as home.",
+  "description": "No Shorts, no Games, no algorithm noise. YouTube the way it should be.",
   "permissions": [
     "webNavigation",
     "tabs",

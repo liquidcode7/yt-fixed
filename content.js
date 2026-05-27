@@ -8,6 +8,11 @@ const FALLBACK_JS_SELECTORS = [
   ".ytp-endscreen-content",
   "ytm-shorts-lockup-view-model-v2",
   "grid-shelf-view-model",
+  "ytd-merch-shelf-renderer",
+  "ytd-primetime-promo-renderer",
+  "ytd-statement-banner-renderer",
+  "ytd-donation-shelf-renderer",
+  "ytd-brand-video-shelf-renderer",
 ];
 
 let activeSelectors = FALLBACK_JS_SELECTORS;
@@ -17,9 +22,9 @@ function removeJunk() {
     document.querySelectorAll(selector).forEach((el) => el.remove());
   }
 
-  // Remove Shorts from sidebar by href
+  // Remove Shorts and Gaming from sidebar by href
   document.querySelectorAll("ytd-guide-entry-renderer a").forEach((a) => {
-    if (a.href.includes("/shorts")) {
+    if (a.href.includes("/shorts") || a.href.includes("/gaming")) {
       a.closest("ytd-guide-entry-renderer")?.remove();
     }
   });

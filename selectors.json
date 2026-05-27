@@ -8,7 +8,12 @@
     ".ytp-ce-element",
     ".ytp-endscreen-content",
     "ytm-shorts-lockup-view-model-v2",
-    "grid-shelf-view-model"
+    "grid-shelf-view-model",
+    "ytd-merch-shelf-renderer",
+    "ytd-primetime-promo-renderer",
+    "ytd-statement-banner-renderer",
+    "ytd-donation-shelf-renderer",
+    "ytd-brand-video-shelf-renderer"
   ],
   "css": [
     "ytd-reel-shelf-renderer",
@@ -16,11 +21,18 @@
     "tp-yt-paper-tab:has(> .tab-content[aria-label=\"Shorts\"])",
     "ytd-reel-item-renderer",
     "yt-chip-cloud-chip-renderer:has([title=\"Shorts\"])",
+    "ytd-guide-entry-renderer a[href=\"/gaming\"]",
+    "yt-chip-cloud-chip-renderer:has([title=\"Gaming\"])",
     "ytd-autoplay-config-renderer",
     ".ytp-ce-element",
     ".ytp-endscreen-content",
     "ytd-compact-autoplay-renderer",
     "ytd-search-pyv-renderer",
-    "ytd-rich-shelf-renderer"
+    "ytd-rich-shelf-renderer",
+    "ytd-merch-shelf-renderer",
+    "ytd-primetime-promo-renderer",
+    "ytd-statement-banner-renderer",
+    "ytd-donation-shelf-renderer",
+    "ytd-brand-video-shelf-renderer"
   ]
 }

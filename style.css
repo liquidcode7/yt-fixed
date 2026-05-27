@@ -7,6 +7,12 @@ yt-chip-cloud-chip-renderer:has([title="Shorts"]) {
   display: none !important;
 }
 
+/* ── Gaming: also no ─────────────────────────────── */
+ytd-guide-entry-renderer a[href="/gaming"],
+yt-chip-cloud-chip-renderer:has([title="Gaming"]) {
+  display: none !important;
+}
+
 /* ── Autoplay & end screen junk ──────────────────── */
 ytd-autoplay-config-renderer,
 .ytp-ce-element,
@@ -18,5 +24,14 @@ ytd-autoplay-config-renderer,
 ytd-compact-autoplay-renderer,
 ytd-search-pyv-renderer,
 ytd-rich-shelf-renderer {
+  display: none !important;
+}
+
+/* ── Merch, promos, and other bullshit ───────────── */
+ytd-merch-shelf-renderer,
+ytd-primetime-promo-renderer,
+ytd-statement-banner-renderer,
+ytd-donation-shelf-renderer,
+ytd-brand-video-shelf-renderer {
   display: none !important;
 }
